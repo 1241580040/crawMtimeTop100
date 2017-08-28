@@ -32,16 +32,6 @@ class MtimeSpider(scrapy.Spider):
     def parse_page(self, response):
         #print response
         #allpics = response.xpath("//script[@type='text/javascript']").extract()[4]
-        
-        top100To5Page = []
-        top100To5Page.append(u"http://www.mtime.com/top/movie/top100")
-        webSites = response.xpath("//div[@id='PageNavigator'][@class='pagenav tc']/a/@href").extract()
-        for webSite in webSites:
-            top100To5Page.append(webSite)
-        print "+"*80
-        print top100To5Page
-        print "+"*80
-
 
         allMovieWebsite = response.xpath("//div/ul[@id='asyncRatingRegion']/li//h2/a/@href").extract()
         print allMovieWebsite
